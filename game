@@ -1,0 +1,30 @@
+<?php
+error_reporting(-1);
+
+$anonDice1 = mt_rand(1, 6);
+$anonDice2 = mt_rand(1, 6);
+
+$compDice1 = mt_rand(1, 6);
+$compDice2 = mt_rand(1, 6);
+
+echo "У анона выпало {$anonDice1} и {$anonDice2}\n "
+. "У компа выпало {$compDice1} и {$compDice2}\n";
+
+$anonSum = ($anonDice1 + $anonDice2);
+$compSum = ($compDice1 + $compDice2);
+
+if (($anonDice1 == $anonDice2) && ($compDice1 == $compDice2)) {
+    echo "(2 дабла это удача) \n";
+    exit();
+}
+
+if ($anonSum > $compSum) {
+    echo "Анон победил\n";
+} 
+elseif ($compSum > $anonSum) {
+    echo "КомпЪ победилЪ\n";
+}
+// probliem with this part of code
+else (($compSum == $anonSum) || ($anonSum == $compSum)){
+    echo "Ничья";
+}
